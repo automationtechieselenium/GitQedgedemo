@@ -1,0 +1,36 @@
+package Demo;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class XLDemoTest {
+
+	public static void main(String[] args) throws IOException {
+		
+		// TODO Auto-generated method stub
+//CREATING WORKBOOK OBJECT
+		FileInputStream fi=new FileInputStream("E:\\Test folder\\New Joinees data Requi.xlsx");
+		Workbook wb=new XSSFWorkbook(fi);
+	    wb.createSheet("Demosheet");//Creation of sheet in file present in the memory
+	    
+	    
+		FileOutputStream fo=new FileOutputStream("C:\\Program Files\\ApachePoi.xlsx");
+		wb.write(fo);
+		
+		wb.close();
+		fi.close();
+		fo.close();
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}
